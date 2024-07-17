@@ -1,0 +1,114 @@
+
+Versions:           
+        i) python version - 3.12.4
+        ii) django version - 5.0.7
+
+Databse : 
+        i) used database = MySql  
+	ii) mention your credentials at env file.     
+        iii) db_name = "sidebuilder"
+            db_user = "amay"
+            db_password = "1100"
+            db_host = "127.0.0.1"
+
+Project setup: 
+
+        step 1- get the build from repository.
+
+        step 2- install project at your local.
+
+        step 3- setup database or import database as i given in the folder.
+
+        step 4- run the project at your system with runserver command.     	
+	
+	step 5 - username = admin , password= Pass$123 credentials to verify user and get bearer token.
+
+        step 6 - after this steps if any error will occur please contact me.
+
+
+Apis Documentaion:
+
+    1) url = http://127.0.0.1:8000/api/custom_token_obtain
+        method = POST
+        payload = {
+            "username":"admin",
+            "password":"Pass$123"
+        }
+
+    ----------vendor apis ---------------------
+
+    2) url = http://127.0.0.1:8000/api/vendors/getVendor
+        method = GET
+
+    3)  url = http://127.0.0.1:8000/api/vendors/create_vendor	
+        method = POST
+        payload = {
+                    "name": "omkar Name",
+                    "contact_details": "om Details",
+                    "address": "om Address",
+                    "vendor_code": "om_VENDssOR_CODE"
+                }
+
+
+
+    4) url = http://127.0.0.1:8000/api/vendors/getVendorId/{vendor_id}
+        method = GET
+
+    5)  url = http://127.0.0.1:8000/api/vendors/updateVendor/{vendor_id}
+        method = PUT
+        payload = {
+                    "name": "omkar Name",
+                    "contact_details": "om Details",
+                    "address": "om Address",
+                    "vendor_code": "om_VENDssOR_CODE"
+                }
+
+    6)  url = http://127.0.0.1:8000/api/vendors/deletVendor/{vendor_id}
+        method = DELETE
+
+    ----------purchase order apis ---------------------
+
+    7) url = http://127.0.0.1:8000/api/purchase_orders/create_purchase_order
+        method = POST
+        payload = {
+            "po_number": "PO12340456",
+            "vendor": 2,
+            "order_date": "2023-07-01T12:00:00Z",
+            "delivery_date": "2023-07-15T12:00:00Z",
+            "items": {"item1": 10, "item2": 5},
+            "quantity": 15,
+            "quality_rating": 1.5,
+            "status": "pending",
+            "issue_date": "2023-07-01T12:00:00Z",
+            "acknowledgment_date": "2023-08-01T12:00:00Z"
+        }
+
+
+    8) url = http://127.0.0.1:8000/api/purchase_orders/get_purchase_order_filter/{vendor_id}
+        method = GET
+
+    9) url = http://127.0.0.1:8000/api/purchase_orders/get_purchase_order/{po_id}
+        method = GET
+
+    10) url = http://127.0.0.1:8000/api/purchase_orders/delete_purchase_order/{po_id}
+        method = DELETE
+
+    11) url = http://127.0.0.1:8000/api/purchase_orders/update_purchase_order/2
+        method = PUT
+        payload = {
+            "po_number": "PO12340456",
+            "vendor": 2,
+            "order_date": "2023-07-01T12:00:00Z",
+            "delivery_date": "2023-07-15T12:00:00Z",
+            "items": {"item1": 10, "item2": 5},
+            "quantity": 15,
+            "quality_rating": 1.5,
+            "status": "pending",
+            "issue_date": "2023-07-01T12:00:00Z",
+            "acknowledgment_date": "2023-08-01T12:00:00Z"
+        }
+
+
+    ----------performance api ---------------------
+    12) url = http://127.0.0.1:8000/api/vendors/getVendorPerformance/{vendor_id}
+        method = GET
